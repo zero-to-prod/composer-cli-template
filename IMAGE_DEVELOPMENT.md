@@ -10,7 +10,7 @@
 
 ## Introduction
 
-This project provides a convenient [dh](https://github.com/zero-to-prod/dock) (Docker Hub) script to simplify image development.
+This project provides a convenient `dh` (Docker Hub) script to simplify image development.
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ This project provides a convenient [dh](https://github.com/zero-to-prod/dock) (D
 Before starting development, verify that your `.env` file contains the correct settings.
 
 ```dotenv
-DOCKER_IMAGE=
+DOCKER_IMAGE=davidsmith3/:package_slug
 DOCKER_IMAGE_TAG=latest
 ```
 
