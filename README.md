@@ -3,7 +3,8 @@
 ![](art/logo.png)
 
 [![Repo](https://img.shields.io/badge/github-gray?logo=github)](https://github.com/zero-to-prod/:package_slug)
-[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zero-to-prod/:package_slug/test.yml?label=tests)](https://github.com/zero-to-prod/:package_slug/actions)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zero-to-prod/:package_slug/test.yml?label=test)](https://github.com/zero-to-prod/:package_slug/actions)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zero-to-prod/:package_slug/build_docker_image.yml?label=build)](https://github.com/zero-to-prod/:package_slug/actions)
 [![Packagist Downloads](https://img.shields.io/packagist/dt/zero-to-prod/:package_slug?color=blue)](https://packagist.org/packages/zero-to-prod/:package_slug/stats)
 [![php](https://img.shields.io/packagist/php-v/zero-to-prod/:package_slug.svg?color=purple)](https://packagist.org/packages/zero-to-prod/:package_slug/stats)
 [![Packagist Version](https://img.shields.io/packagist/v/zero-to-prod/:package_slug?color=f28d1a)](https://packagist.org/packages/zero-to-prod/:package_slug)
