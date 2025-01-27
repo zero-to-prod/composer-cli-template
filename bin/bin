@@ -6,8 +6,8 @@ use Zerotoprod\:package_namespace\SrcCommand;
 
 require getcwd().'/vendor/autoload.php';
 
-$application = (new Application());
+$Application = (new Application());
 
-$application->add(new SrcCommand());
+$Application->add(new SrcCommand());
 
-$application->run();
+$Application->run();
