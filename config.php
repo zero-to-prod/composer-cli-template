@@ -49,12 +49,12 @@ function writeln(string $line): void
 
 function replaceForWindows(): array
 {
-    return preg_split('/\\r\\n|\\r|\\n/', run('dir /S /B * | findstr /v /i .git\ | findstr /v /i vendor | findstr /v /i '.basename(__FILE__).' | findstr /r /i /M /F:/ ":package_namespace :package_classname :package_slug"'));
+    return preg_split('/\\r\\n|\\r|\\n/', run('dir /S /B /A-D-H * | findstr /v /i .git\ | findstr /v /i vendor | findstr /v /i '.basename(__FILE__).' | findstr /r /i /M /F:/ ":package_namespace :package_classname :package_slug"'));
 }
 
 function replaceForAllOtherOSes(): array
 {
-    return explode(PHP_EOL, run('grep -E -r -l -i ":package_namespace|:package_classname|:package_slug" --exclude-dir=vendor ./* ./.github/* | grep -v '.basename(__FILE__)));
+    return explode(PHP_EOL, run('find . -type f -not -path "./vendor/*" -exec grep -E -l -i ":package_namespace|:package_classname|:package_slug" {} + | grep -v '.basename(__FILE__)));
 }
 
 $package_namespace = ask('Package Namespace');
