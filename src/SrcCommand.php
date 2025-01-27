@@ -10,20 +10,16 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 #[AsCommand(
-    name: 'example',
-    description: 'description'
+    name: ':package_slug:src',
+    description: 'Project source link'
 )]
-class :package_namespace extends Command
+class SrcCommand extends Command
 {
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        return Command::SUCCESS;
-    }
+        $output->writeLn('https://github.com/zero-to-prod/:package_slug');
 
-    protected function configure(): void
-    {
-        $this->addArgument('arg1', InputArgument::REQUIRED, 'description.');
-        $this->addOption('option1', mode: InputOption::VALUE_OPTIONAL, description: 'description');
+        return Command::SUCCESS;
     }
 }
