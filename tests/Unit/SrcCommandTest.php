@@ -15,7 +15,7 @@ class SrcCommandTest extends TestCase
         $application = new Application();
         $application->add(new SrcCommand());
 
-        $command = $application->find('src');
+        $command = $application->find(':package_slug:src');
         $commandTester = new CommandTester($command);
         $commandTester->execute([]);
 
