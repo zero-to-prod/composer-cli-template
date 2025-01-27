@@ -49,20 +49,23 @@ function writeln(string $line): void
 
 function replaceForWindows(): array
 {
-    return preg_split('/\\r\\n|\\r|\\n/', run('dir /S /B /A-D-H * | findstr /v /i .git\ | findstr /v /i vendor | findstr /v /i '.basename(__FILE__).' | findstr /r /i /M /F:/ ":package_namespace :package_classname :package_slug"'));
+    return preg_split('/\\r\\n|\\r|\\n/', run('dir /S /B /A-D-H * | findstr /v /i .git\ | findstr /v /i vendor | findstr /v /i '.basename(__FILE__).' | findstr /r /i /M /F:/ ":namespace :package_classname :slug"'));
 }
 
 function replaceForAllOtherOSes(): array
 {
-    return explode(PHP_EOL, run('find . -type f -not -path "./vendor/*" -exec grep -E -l -i ":package_namespace|:package_classname|:package_slug" {} + | grep -v '.basename(__FILE__)));
+    return explode(PHP_EOL, run('find . -type f -not -path "./vendor/*" -exec grep -E -l -i ":namespace|:package_classname|:slug" {} + | grep -v '.basename(__FILE__)));
 }
 
-$package_namespace = ask('Package Namespace');
-$package_slug = ask('Package Slug');
+$namespace = ask('Package Namespace');
+$slug = ask('Package Slug');
+$description = ask('Package Description');
 
 writeln('------');
-writeln("Package Namespace: $package_namespace");
-writeln("Package Slug: $package_slug");
+writeln("Package Namespace: $namespace");
+writeln("Package Slug: $slug");
+writeln("Package Slug: $slug");
+writeln("Package Slug: $description");
 writeln('------');
 
 writeln('This script will replace the above values in all relevant files in the project directory.');
@@ -76,12 +79,13 @@ $time = date('Y-m-d');
 
 foreach ($files as $file) {
     replace_in_file($file, [
-        ':package_namespace' => $package_namespace,
-        ':package_slug' => $package_slug,
+        ':namespace' => $namespace,
+        ':slug' => $slug,
+        ':description' => $description,
         ':time' => $time,
     ]);
 }
 
-rename('bin/bin', 'bin/'.$package_slug);
+rename('bin/bin', 'bin/'.$slug);
 
 echo PHP_EOL;

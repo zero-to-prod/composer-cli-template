@@ -2,7 +2,7 @@
 <?php
 
 use Symfony\Component\Console\Application;
-use Zerotoprod\:package_namespace\SrcCommand;
+use Zerotoprod\:namespace\SrcCommand;
 
 require getcwd().'/vendor/autoload.php';
 

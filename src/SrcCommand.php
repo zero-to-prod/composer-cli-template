@@ -1,6 +1,6 @@
 <?php
 
-namespace Zerotoprod\:package_namespace;
+namespace Zerotoprod\:namespace;
 
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -13,11 +13,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 )]
 class SrcCommand extends Command
 {
-    public const signature = ':package_namespace:src';
+    public const signature = ':namespace:src';
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $output->writeLn('https://github.com/zero-to-prod/:package_slug');
+        $output->writeln('https://github.com/zero-to-prod/:slug');
 
         return Command::SUCCESS;
     }

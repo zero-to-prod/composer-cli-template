@@ -2,11 +2,13 @@
 
 namespace Tests\Unit;
 
+use;
 use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use Tests\TestCase;
-use Zerotoprod\:package_namespace\SrcCommand;
+
+:namespace\SrcCommand;
 
 class SrcCommandTest extends TestCase
 {
@@ -14,9 +16,9 @@ class SrcCommandTest extends TestCase
     {
         $Application = new Application();
         $Application->add(new SrcCommand());
-
         $Command = $Application->find(SrcCommand::signature);
         $CommandTester = new CommandTester($Command);
+
         $CommandTester->execute([]);
 
         $CommandTester->assertCommandIsSuccessful();
