@@ -57,11 +57,6 @@ function replaceForAllOtherOSes(): array
     return explode(PHP_EOL, run('grep -E -r -l -i ":package_namespace|:package_classname|:package_slug" --exclude-dir=vendor ./* ./.github/* | grep -v '.basename(__FILE__)));
 }
 
-function determineSeparator(string $path): string
-{
-    return str_replace('/', DIRECTORY_SEPARATOR, $path);
-}
-
 $package_namespace = ask('Package Namespace');
 $package_slug = ask('Package Slug');
 
@@ -85,13 +80,6 @@ foreach ($files as $file) {
         ':package_slug' => $package_slug,
         ':time' => $time,
     ]);
-
-    switch (true) {
-        case str_contains($file, determineSeparator('src/ExampleCommand.php')):
-            rename($file, determineSeparator('./src/'.$package_namespace.'.php'));
-            break;
-        default:
-    }
 }
 
 rename('bin/bin', 'bin/'.$package_slug);
