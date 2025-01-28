@@ -84,6 +84,12 @@ foreach ($files as $file) {
         ':description' => $description,
         ':time' => $time,
     ]);
+    switch (true) {
+        case str_contains($file, determineSeparator('src/Package.php')):
+            rename($file, determineSeparator('./src/'.$namespace.'.php'));
+            break;
+        default:
+    }
 }
 
 rename('bin/bin', 'bin/'.$slug);
