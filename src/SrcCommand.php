@@ -4,6 +4,7 @@ namespace Zerotoprod\:namespace;
 
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -14,11 +15,17 @@ use Symfony\Component\Console\Output\OutputInterface;
 class SrcCommand extends Command
 {
     public const signature = ':slug:src';
+    public const argument = 'argument';
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln('https://github.com/zero-to-prod/:slug');
 
         return Command::SUCCESS;
+    }
+
+    public function configure(): void
+    {
+        $this->addArgument(self::argument, InputArgument::REQUIRED);
     }
 }
