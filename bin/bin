@@ -2,12 +2,12 @@
 <?php
 
 use Symfony\Component\Console\Application;
-use Zerotoprod\:namespace\SrcCommand;
+use Zerotoprod\:namespace\:namespace;
 
 require getcwd().'/vendor/autoload.php';
 
 $Application = (new Application());
 
-$Application->add(new SrcCommand());
+:namespace::register($Application);
 
 $Application->run();
