@@ -13,7 +13,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 )]
 class SrcCommand extends Command
 {
-    public const signature = ':namespace:src';
+    public const signature = ':slug:src';
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
