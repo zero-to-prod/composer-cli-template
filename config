@@ -57,6 +57,11 @@ function replaceForAllOtherOSes(): array
     return explode(PHP_EOL, run('find . -type f -not -path "./vendor/*" -exec grep -E -l -i ":namespace|:package_classname|:slug" {} + | grep -v '.basename(__FILE__)));
 }
 
+function determineSeparator(string $path): string
+{
+    return str_replace('/', DIRECTORY_SEPARATOR, $path);
+}
+
 $namespace = ask('Package Namespace');
 $slug = ask('Package Slug');
 $description = ask('Package Description');
