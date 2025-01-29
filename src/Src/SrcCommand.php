@@ -1,6 +1,6 @@
 <?php
 
-namespace Zerotoprod\Src\:namespace;
+namespace Zerotoprod\:namespace\Src;
 
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
