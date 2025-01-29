@@ -3,6 +3,7 @@
 namespace Zerotoprod\:namespace;
 
 use Symfony\Component\Console\Application;
+use Zerotoprod\:namespace\Src\SrcCommand;
 
 class :namespace
 {
