@@ -6,6 +6,7 @@ use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 #[AsCommand(
@@ -27,5 +28,6 @@ class SrcCommand extends Command
     public function configure(): void
     {
         $this->addArgument(self::argument, InputArgument::REQUIRED);
+        $this->addOption('', mode: InputOption::VALUE_OPTIONAL, description: '', suggestedValues: ['']);
     }
 }
