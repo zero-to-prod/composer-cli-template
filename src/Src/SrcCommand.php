@@ -1,6 +1,6 @@
 <?php
 
-namespace Zerotoprod\:namespace;
+namespace Zerotoprod\Src\:namespace;
 
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -16,7 +16,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 class SrcCommand extends Command
 {
     public const signature = ':slug:src';
-    public const argument = 'argument';
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
@@ -27,7 +26,7 @@ class SrcCommand extends Command
 
     public function configure(): void
     {
-        $this->addArgument(self::argument, InputArgument::REQUIRED);
+        $this->addArgument('argument', InputArgument::REQUIRED);
         $this->addOption('', mode: InputOption::VALUE_OPTIONAL, description: '', suggestedValues: ['']);
     }
 }
