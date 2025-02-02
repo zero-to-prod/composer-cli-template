@@ -69,7 +69,6 @@ $description = ask('Package Description');
 writeln('------');
 writeln("Package Namespace: $namespace");
 writeln("Package Slug: $slug");
-writeln("Package Slug: $slug");
 writeln("Package Slug: $description");
 writeln('------');
 
