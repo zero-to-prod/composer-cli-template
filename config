@@ -66,12 +66,6 @@ $namespace = ask('Package Namespace');
 $slug = ask('Package Slug');
 $description = ask('Package Description');
 
-writeln('------');
-writeln("Package Namespace: $namespace");
-writeln("Package Slug: $slug");
-writeln("Package Description: $description");
-writeln('------');
-
 writeln('This script will replace the above values in all relevant files in the project directory.');
 
 if (!confirm('Modify files?', true)) {
