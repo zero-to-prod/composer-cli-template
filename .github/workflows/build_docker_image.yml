@@ -44,8 +44,6 @@ jobs:
           tags: |
             davidsmith3/:slug:latest
             davidsmith3/:slug:${{ env.VERSION }}
-          cache-from: type=registry,ref=davidsmith3/:slug:buildcache
-          cache-to: type=registry,ref=davidsmith3/:slug:buildcache,mode=max
           build-args: |
             NODE_ENV=production
           labels: |
